@@ -1,15 +1,24 @@
+/* eslint-disable no-undef */
 
-import { Button } from '@mui/material'
-import './App.css'
+import "./App.css";
 
+import { AppTheme } from "./theme/AppTheme";
+// import { MaterialUI } from "./MaterialUI";
+
+import { CssBaseline } from "@mui/material";
+import { MaterialUI } from "./MaterialUI";
+import { SnackbarProvider } from "notistack";
 function App() {
- 
   return (
     <>
-    <h1>Material UI</h1>
-    <Button variant="contained">Hola</Button>
+      <AppTheme>
+        <SnackbarProvider maxSnack={3} autoHideDuration={2000}>
+          <CssBaseline />
+          <MaterialUI />
+        </SnackbarProvider>
+      </AppTheme>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
